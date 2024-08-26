@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class Sum_Product_Reverse {
+
+	public static void main(String[] args) {
+		Scanner s1=new Scanner(System.in);
+		int n=s1.nextInt();
+		int s=n;
+		int p=n;
+		int sum=0;
+		
+		while(s>0) {
+			int r=s%10;
+			sum+=r;
+			s=s/10;
+		}
+		System.out.println("sum of the given number is: "+sum);
+		int product=1;
+		while(p>0) {
+			int r=p%10;
+			product*=r;
+			p=p/10;
+		}
+		System.out.println("product of the given number is: "+product);
+		if(sum==product) {
+			System.out.println("it is a spy number");
+			int rev=0;
+			while(n>0) {
+				int r=n%10;
+				rev=rev*10+r;
+				n=n/10;
+			}
+			System.out.println("Given number in reverse order: "+rev);
+		}else {
+			System.out.println("it is not a spy number");
+		}
+	}
+
+}
